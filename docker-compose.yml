@@ -1,0 +1,19 @@
+database:
+  image: postgres:latest
+  ports:
+    - '5432'
+  environment:
+    POSTGRES_PASSWORD: rootpwd
+
+app:
+  build: .
+  container_name: phoenix_trello_web
+  command: make startup
+  volumes:
+    - .:/phoenixapp
+  ports:
+    - '4000:4000'
+  links:
+    - database
+  environment:
+    MIX_ENV: dev

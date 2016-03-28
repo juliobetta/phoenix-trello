@@ -13,9 +13,9 @@ config :logger, level: :warn
 config :phoenix_trello, PhoenixTrello.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
-  password: "postgres",
+  password: "rootpwd",
   database: "phoenix_trello_test",
-  hostname: "localhost",
+  hostname: "database",
   pool: Ecto.Adapters.SQL.Sandbox
 
 # Guardian configuration
